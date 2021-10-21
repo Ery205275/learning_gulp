@@ -1,44 +1,44 @@
-(() =>{
+(() => {
+    const   theTeam = document.querySelector("#teamSection"),
+            theTemplate = document.querySelector("#bio-template").content;
 
-    const  theTeam = document.querySelector("#teamSection"),
-           theTemplate = document.querySelector("#bio-template").content;
+    // set up a Fetch function and get some data
+    function getData() {
+        // retrieve our data object
+        fetch("./data.json") // go and get the data (fetch boy!)
+            .then(res => res.json()) // good dog! clean the stick (convert the data to a plain object)
+            .then(data => {
+                console.log(data);
 
+                buildTeam(data);
+            })
+        .catch(error => console.error(error));
+    }
 
+    function buildTeam(info) {
 
-//set up a Fetch function and get some data
-  function getData(){
-    //retrieve our data object
-    fetch("./data.json") //go and get data
-       .then(res => res.json()) //(convert the data to plain object)
-       .then(data => {
-        console.log(data);
+        // grab the keys from the data object (the names)
+        const people = Object.keys(info);
 
-        buildTeam(data);
-       })
-    .catch(error => console.error(error));
-  }
+        people.forEach(person => {
+            let panel = theTemplate.cloneNode(true); // make a copy of the template content
+            let containers = panel.firstElementChild.children; // get a reference to the template content
 
-  function buildTeam(info){
-// grab key drom data object 
-     const people = Object.keys(info);
-     people.forEach(person => {
-         let panel = theTemplate.cloneNode(true); //make a copy of the template conetnt
-         let containers = panel.firstElementChild.children; // get a reference to the template content
+            // cycle through the child elements inside the <section> tag in the <template> tag
+            // and update their attributes 
+            
+            // add the image
+            containers[0].querySelector("img").src = `images/${info[person].biopic}`;
 
-         //cycle through child element in the <secion> tag in the <template> tag
-        // and update their attributes
+            // update the text
+            containers[1].textContent = info[person].name;
+            containers[2].textContent = info[person].role;
+            containers[3].textContent = info[person].nickname;
 
-        // add the images
-         containers[0].querySelector("img").scr = `images/${info[person].biopic}`;
+            theTeam.appendChild(panel);
+        });
 
-         //update the text
-         containers[1].textContent = info[person].name;
-         containers[2].textContent = info[person].role;
-         containers[3].textContent = info[person].nickname;
+    }
 
-         theTeam.appendChild(panel);
-     })
-  }
-
-  getData();
+    getData();
 })();
