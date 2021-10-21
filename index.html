@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with AJAX</title>
+</head>
+<body>
+    <h1>this is my test</h1>
+
+    <section id="teamSection"></section>
+    <!-- template tags at the bottom-->
+    <!-- template tags don't get rendered - they just hold reusable content-->
+    <template id="bio-template">
+        <section class="bio-panel"> 
+            <div class="p_avatar"><!-- this is index 0 (first child)-->
+                <img src="" alt="">
+            </div>
+    
+            <h2 class="p_name">slug</h2><!-- this is index 1 (second child)-->
+            <h3 class="p_role">slug</h3><!-- this is index 2 (third child)-->
+            <p class="p-nicknames"><!-- this is index 3 (fourth child)-->
+                slug
+            </p>
+        </section>
+    </template>
+    <script src="js/main.js" type="module" defer></script>
+</body>
+</html>

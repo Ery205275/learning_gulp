@@ -1,0 +1,32 @@
+{
+    "Justin": {
+        "name":"Justin",
+        "role":"Coordinator",
+        "nickname":"i don't know",
+        "biopic":"justin.jpeg"
+    },
+    "John": {
+        "name":"John",
+        "role":"super chill prof",
+        "nickname":"just john",
+        "biopic":"john.jpeg"
+    },
+    "Joe": {
+        "name":"Joe",
+        "role":"Prof",
+        "nickname":"Teddy Bear",
+        "biopic":"joe.jpeg"
+    },
+    "Pan": {
+        "name":"Pan",
+        "role":"Code Ninja",
+        "nickname":"Spider Pan",
+        "biopic":"pan.jpeg"
+    },
+    "Trevor": {
+        "name":"Trevor",
+        "role":"Dark Arts Prof",
+        "nickname":"T Dazzle",
+        "biopic":"trevor.jpeg"
+    }
+  }
